@@ -26,9 +26,13 @@
                 <dl class="definition-list" v-for="(job, i) in meta.instance.jobs">
                     <dt class="definition-label">[{{i}}]</dt>
                     <dd class="definition-value">
-                        <code class="code-inline">{{job}}</code></code>
+                        <code class="code-inline">{{job.fqn}} (Time Started: {{job.time}})</code>
                     </dd>
                 </dl>
+            </div>
+            
+            <div class="tab-content-section">
+                <p class="credits">Powered by Vivid Architecture</p>
             </div>
         </div>
     </div>
@@ -45,5 +49,8 @@
 </script>
 
 <style>
-    /* Scoped Styles */
+    .credits {
+        text-align: center;
+        color: rgb(209, 204, 224);
+    }
 </style>
