@@ -1,0 +1,49 @@
+{
+    "name": "vivid-arch/laravel-ignition-tab",
+    "description": "A package that displays debug information for the Vivid Architecture",
+    "keywords": [
+        "laravel",
+        "flare",
+        "ignition",
+        "vivid"
+    ],
+    "homepage": "https://github.com/vivid-arch/laravel-ignition-tab",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Meletios Flevarakis",
+            "email": "m.flevarakis@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "facade/ignition": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.8",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vivid\\Ignition\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vivid\\Ignition\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vivid\\Ignition\\TabServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
