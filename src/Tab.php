@@ -25,10 +25,10 @@ class Tab extends BaseTab
     {
         return [
             'title' => $this->name(),
-            'instance' => $this->getVividInstance()
+            'instance' => $this->getVividInstance(),
         ];
     }
-    
+
     protected function getVividInstance()
     {
         return resolve('Vivid\Foundation\Instance')->toArray();

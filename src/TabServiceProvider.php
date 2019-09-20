@@ -5,7 +5,6 @@ namespace Vivid\Ignition;
 use Facade\Ignition\Ignition;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Vivid\Ignition\Http\Middleware\Authorize;
 
 class TabServiceProvider extends ServiceProvider
 {
@@ -29,7 +28,7 @@ class TabServiceProvider extends ServiceProvider
             return;
         }
 
-        if (!config('app.debug')) {
+        if (! config('app.debug')) {
             return;
         }
 
