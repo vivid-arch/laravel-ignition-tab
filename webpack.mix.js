@@ -1,3 +1,4 @@
 let mix = require('laravel-mix')
 
-mix.js('resources/js/tab.js', 'dist/js');
+mix.setPublicPath('dist');
+mix.js('resources/js/tab.js', 'js');
