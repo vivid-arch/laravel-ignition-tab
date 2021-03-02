@@ -41,8 +41,7 @@ class Tab extends BaseTab
 
     public function prepareData($jobs)
     {
-        foreach ($jobs as $k => $v)
-        {
+        foreach ($jobs as $k => $v) {
             $jobs[$k]['json'] = json_encode($v['data']);
             $jobs[$k]['fqn_path'] = $this->preparePath($v['fqn']);
         }
@@ -54,8 +53,7 @@ class Tab extends BaseTab
     {
         try {
             return (new \ReflectionClass($class))->getFileName();
-        }
-        catch (\Exception $e) {
+        } catch (\Exception $e) {
             return null;
         }
     }
