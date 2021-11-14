@@ -4,8 +4,11 @@ namespace Vivid\Ignition\Http\Controllers;
 
 class TabController
 {
+    /**
+     * @return mixed
+     */
     public function index()
     {
-        return 'Hello world!';
+        return 'Vivid Ignition tab';
     }
 }
