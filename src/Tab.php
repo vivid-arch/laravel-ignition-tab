@@ -18,7 +18,7 @@ class Tab extends BaseTab
 
     public function registerAssets(): void
     {
-        $this->script('laravel-ignition-tab', __DIR__.'/../dist/js/tab.js');
+        $this->script('laravel-ignition-tab', __DIR__ . '/../dist/js/tab.js');
     }
 
     public function meta(): array
@@ -26,11 +26,13 @@ class Tab extends BaseTab
         $instance = $this->getVividInstance();
         $instance['jobs'] = $this->prepareData($instance['jobs']);
 
-        if ($instance['controller'])
+        if ($instance['controller']) {
             $instance['controller_path'] = $this->preparePath($instance['controller']);
+        }
 
-        if ($instance['feature'])
+        if ($instance['feature']) {
             $instance['feature_path'] = $this->preparePath($instance['feature']);
+        }
 
         return [
             'title' => $this->name(),

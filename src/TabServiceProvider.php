@@ -28,12 +28,12 @@ class TabServiceProvider extends ServiceProvider
             return;
         }
 
-        if (! config('app.debug')) {
+        if (!config('app.debug')) {
             return;
         }
 
         Route::prefix('ignition-vendor/vivid-arch/laravel-ignition-tab')
-                ->group(__DIR__.'/../routes/api.php');
+                ->group(__DIR__ . '/../routes/api.php');
     }
 
     /**
