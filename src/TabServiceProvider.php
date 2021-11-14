@@ -22,7 +22,7 @@ class TabServiceProvider extends ServiceProvider
         Ignition::tab(app(Tab::class));
     }
 
-    protected function routes()
+    protected function routes(): void
     {
         if ($this->app->routesAreCached()) {
             return;

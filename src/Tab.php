@@ -16,7 +16,7 @@ class Tab extends BaseTab
         return 'laravel-ignition-tab';
     }
 
-    public function registerAssets()
+    public function registerAssets(): void
     {
         $this->script('laravel-ignition-tab', __DIR__.'/../dist/js/tab.js');
     }
@@ -25,8 +25,12 @@ class Tab extends BaseTab
     {
         $instance = $this->getVividInstance();
         $instance['jobs'] = $this->prepareData($instance['jobs']);
-        $instance['controller_path'] = $this->preparePath($instance['controller']);
-        $instance['feature_path'] = $this->preparePath($instance['feature']);
+
+        if ($instance['controller'])
+            $instance['controller_path'] = $this->preparePath($instance['controller']);
+
+        if ($instance['feature'])
+            $instance['feature_path'] = $this->preparePath($instance['feature']);
 
         return [
             'title' => $this->name(),
@@ -34,12 +38,12 @@ class Tab extends BaseTab
         ];
     }
 
-    protected function getVividInstance()
+    protected function getVividInstance(): array
     {
         return resolve('Vivid\Foundation\Instance')->toArray();
     }
 
-    public function prepareData($jobs)
+    public function prepareData(array $jobs): array
     {
         foreach ($jobs as $k => $v) {
             $jobs[$k]['json'] = json_encode($v['data']);
@@ -49,6 +53,9 @@ class Tab extends BaseTab
         return $jobs;
     }
 
+    /**
+     * @return string|bool|null
+     */
     public function preparePath(string $class)
     {
         try {
